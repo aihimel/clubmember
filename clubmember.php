@@ -9,10 +9,14 @@ Version: 0.1
 License: GPL2
 */
 
-if(!defined("ABSPATH")) exit();
+if( !defined("ABSPATH") ) exit();
+
+if( is_admin() ){
+	require_once dirname(__FILE__) ."/includes/admin/profile.php";
+}
 
 /**
-* Activation functio
+* Activation function
 *
 * Creating table when installing the plugin
 */
