@@ -13,6 +13,7 @@ if( !defined("ABSPATH") ) exit();
 
 if( is_admin() ){
 	require_once dirname(__FILE__) ."/includes/admin/profile.php";
+	require_once dirname(__FILE__) ."/includes/admin/menu.php";
 }
 
 /**

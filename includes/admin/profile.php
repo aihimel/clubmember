@@ -1,6 +1,7 @@
 <?php
-
-
+/**
+* New user fields added. 
+*/
 function clubmember_user_contacts($methods){
 	$methods['phone']= __("Phone", "clubmember");
 	$methods['facebook']=__("Facebook", "clubmember");
