@@ -40,3 +40,11 @@ function clubmember_activation(){
 }
 
 register_activation_hook( __FILE__ , "clubmember_activation" );
+
+
+function clubmember_wp_enqueue_scripts(){
+		$assets = plugins_url( "assets/" , __FILE__);
+		wp_enqueue_style("clubmember", $assets. "css/layout.css" );
+}
+
+add_action( "admin_enqueue_scripts", "clubmember_wp_enqueue_scripts" );

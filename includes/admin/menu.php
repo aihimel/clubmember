@@ -24,12 +24,12 @@ add_action("admin_menu", "clubmember_admin_menu");
 * view all members
 */
 function clubmember_view_all_page(){
-	echo "View all member";
+	require_once plugin_dir_path(__FILE__) . "../../templates/view-all-member.php";
 }
 
 /* Add new member page */
 function clubmember_add_member_page(){
-	echo "Add a new member";
+	require_once plugin_dir_path(__FILE__) . "../../templates/add-new-member.php";
 }
 
 
