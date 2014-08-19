@@ -16,6 +16,8 @@ function clubmember_admin_menu(){
 		    );
 	add_submenu_page("clubmember-view-all","View All Member", "View All", "manage_options", "clubmember-view-all");
 	add_submenu_page("clubmember-view-all","Add New Member", "Add Member", "manage_options", "clubmember-add-member", "clubmember_add_member_page" );
+	add_submenu_page(null,"Update Member", "Update Member", "manage_options", "clubmember-update-member", "clubmember_update_member_page" );
+	//remove_submenu_page("clubmember-view-all", "clubmember-update-member");
 }
 
 add_action("admin_menu", "clubmember_admin_menu");
@@ -32,5 +34,9 @@ function clubmember_add_member_page(){
 	require_once plugin_dir_path(__FILE__) . "../../templates/add-new-member.php";
 }
 
+/* update member page */
+function clubmember_update_member_page(){
+	require_once plugin_dir_path(__FILE__) . "../../templates/update-member.php";
+}
 
 

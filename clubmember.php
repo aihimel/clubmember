@@ -28,16 +28,14 @@ function clubmember_activation(){
 
 	$sql = "CREATE TABLE IF NOT EXISTS $table_name(
 		`id` bigint(25) unsigned NOT NULL AUTO_INCREMENT,
-		`user_id` bigint(25) DEFAULT NULL,
 		`full_name` varchar(50) DEFAULT NULL,
 		`department` varchar(50) DEFAULT NULL,
 		`semester` varchar(20) DEFAULT NULL,
 		`class_roll` varchar(20) DEFAULT NULL,
 		`email` varchar(40) DEFAULT NULL,
-		`phone' varchar(40) DEFAULT NULL,
+		`phone` varchar(40) DEFAULT NULL,
 		`status` tinyint(1) DEFAULT '1',
-		PRIMARY KEY(`id`),
-		KEY `user_id` (`user_id`)
+		PRIMARY KEY(`id`)
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
 	// db query 
