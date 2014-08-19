@@ -45,10 +45,19 @@ function clubmember_activation(){
 
 register_activation_hook( __FILE__ , "clubmember_activation" );
 
-
+/* Stylesheet and Scripts added */
 function clubmember_wp_enqueue_scripts(){
 		$assets = plugins_url( "assets/" , __FILE__);
 		wp_enqueue_style("clubmember", $assets. "css/layout.css" );
 }
 
 add_action( "admin_enqueue_scripts", "clubmember_wp_enqueue_scripts" );
+
+
+/* shortcode */
+function get_all_clubmembers(){
+	ob_start();
+	require_once dirname(__FILE__) ."/templates/theme-view-all-member.php";
+	return ob_get_clean();
+}
+add_shortcode("view-clubmembers", "get_all_clubmembers" );
