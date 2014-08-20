@@ -1,3 +1,8 @@
+<?php
+// error reporting off 
+error_reporting(0);
+?>
+
 <div class="wrap">
 <h2>Add New Member</h2>
 

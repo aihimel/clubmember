@@ -21,7 +21,7 @@
 				<th>Department</th>
 				<th>Semester</th>
 				<th>Class Roll</th>
-				<th>Email</th>
+				<!-- <th>Email</th> -->
 				<!-- <th class="manage-column" scope="col">Phone</th> -->
 			</tr>
 		</thead>
@@ -37,7 +37,7 @@
 				<td><?php echo $members->department ?></td>
 				<td><?php echo $members->semester ?></td>
 				<td><?php echo $members->class_roll ?></td>
-				<td><?php echo $members->email ?></td>
+				<!-- <td><?php //echo $members->email ?></td> -->
 				<!-- <td><?php //echo $members->phone ?></td> -->
 			</tr>
 

@@ -1,4 +1,7 @@
 <?php
+    // error reporting off
+    error_reporting(0);
+
     $member_id = $_GET['id'];
     global $wpdb;
     $table_name = $wpdb->prefix."clubmember_users";
