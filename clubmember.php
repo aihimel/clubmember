@@ -5,7 +5,7 @@ Plugin URI: http://alaminopu.me/plugins/
 Description: To manage different type of Clubs
 Author: Md. Al-Amin opu
 Author URI: http://alaminopu.me
-Version: 0.1
+Version: 0.2
 License: GPL2
 */
 
@@ -57,6 +57,7 @@ add_action( "admin_enqueue_scripts", "clubmember_wp_enqueue_scripts" );
 /* shortcode */
 function get_all_clubmembers(){
 	ob_start();
+	require_once dirname(__FILE__) ."/includes/functions.php";
 	require_once dirname(__FILE__) ."/templates/theme-view-all-member.php";
 	return ob_get_clean();
 }

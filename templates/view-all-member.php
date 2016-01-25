@@ -1,18 +1,11 @@
+<?php 
+
+$clubmembers = cm_get_all_clubmembers();
+
+?>
+
 <div class="wrap">
 	<h2> View All Member</h2>
-	<?php 
-	 global $wpdb;
-     $table_name = $wpdb->prefix."clubmember_users";
-
-     $clubmembers = $wpdb->get_results(
-     	"
-		SELECT *
-		FROM $table_name
-     	"
-     );
-
-	?>
-
 	<table class="widefat fixed">
 		<thead>
 			<tr>
@@ -56,7 +49,7 @@
 				<td><?php echo $members->email ?></td>
 				<td><?php echo $members->phone ?></td>
 				<td><?php echo $members->status ?></td>
-				<td><a href="/wp-admin/admin.php?page=clubmember-update-member&id=<?php echo $members->id ?>">Edit</a></td>
+				<td><a href="<?php echo admin_url('admin.php?page=clubmember-update-member&id=').$members->id ?>">Edit</a></td>
 			</tr>
 
 		<?php } ?>

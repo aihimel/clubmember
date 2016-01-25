@@ -1,52 +1,26 @@
-<?php
-// error reporting off 
-error_reporting(0);
-?>
-
 <div class="wrap">
 <h2>Add New Member</h2>
 
 <?php
     if($_POST['clubmember_hidden'] == 'Y') {
-        $full_name = $_POST['clubmember_name'];
-        $department = $_POST['clubmember_department'];
-        $semester = $_POST['clubmember_semester'];
-        $rollno = $_POST['clubmember_rollno'];
-        $email = $_POST['clubmember_email'];
-        $phone = $_POST['clubmember_phone'];
-
-        global $wpdb;
-        $table_name = $wpdb->prefix."clubmember_users";
-
-        $wpdb->insert(
-            $table_name,
-            array(
-                "full_name"=>$full_name,
-                "department"=>$department,
-                "semester"=>$semester,
-                "class_roll"=>$rollno,
-                "email"=>$email,
-                "phone"=>$phone
-            ),
-            array(
-                "%s",
-                "%s",
-                "%s",
-                "%s",
-                "%s",
-                "%s"
-            )
+        $member_data = array(
+            "full_name"=>$_POST['clubmember_name'],
+            "department"=>$_POST['clubmember_department'],
+            "semester"=>$_POST['clubmember_semester'],
+            "class_roll"=>$_POST['clubmember_rollno'],
+            "email"=>$_POST['clubmember_email'],
+            "phone"=>$_POST['clubmember_phone']
         );
 
-        if($wpdb->insert_id){
+        $inserted = cm_add_single_member($member_data);
+
+        if($inserted){
            //Form data sent
         ?>
            <div class="clubmember-updated"><p><strong><?php _e('Club Member Added Successfully.' ); ?></strong></p></div>
         <?php }else{
             echo "Error";
         }
-
-
 ?>
 
 <?php

@@ -1,16 +1,6 @@
 <div class="wrap">
 	<?php 
-	 global $wpdb;
-     $table_name = $wpdb->prefix."clubmember_users";
-
-     $clubmembers = $wpdb->get_results(
-     	"
-		SELECT *
-		FROM $table_name
-		WHERE status='1'
-     	"
-     );
-
+	 $clubmembers = cm_get_all_active_members();
 	?>
 
 	<table class="clubmember-all">

@@ -2,6 +2,13 @@
 /**
 * admin menu for wordpress
 */
+error_reporting(0);
+
+/* Constants */
+define('PLUGIN_PATH', plugin_dir_path( __FILE__ ));
+
+/* includes file */
+require_once PLUGIN_PATH. "../functions.php";
 
 function clubmember_admin_menu(){
 	/* top level menu */
@@ -26,17 +33,17 @@ add_action("admin_menu", "clubmember_admin_menu");
 * view all members
 */
 function clubmember_view_all_page(){
-	require_once plugin_dir_path(__FILE__) . "../../templates/view-all-member.php";
+	require_once PLUGIN_PATH . "../../templates/view-all-member.php";
 }
 
 /* Add new member page */
 function clubmember_add_member_page(){
-	require_once plugin_dir_path(__FILE__) . "../../templates/add-new-member.php";
+	require_once PLUGIN_PATH . "../../templates/add-new-member.php";
 }
 
 /* update member page */
 function clubmember_update_member_page(){
-	require_once plugin_dir_path(__FILE__) . "../../templates/update-member.php";
+	require_once PLUGIN_PATH . "../../templates/update-member.php";
 }
 
 
