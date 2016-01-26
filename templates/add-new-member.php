@@ -9,7 +9,9 @@
             "semester"=>$_POST['clubmember_semester'],
             "class_roll"=>$_POST['clubmember_rollno'],
             "email"=>$_POST['clubmember_email'],
-            "phone"=>$_POST['clubmember_phone']
+            "phone"=>$_POST['clubmember_phone'],
+            "membership_date"=>date ("Y-m-d",  strtotime($_POST['clubmember_membership_date'])),
+            "membership_duration"=>$_POST['clubmember_membership_duration']
         );
 
         $inserted = cm_add_single_member($member_data);
@@ -59,6 +61,31 @@
         <tr valign="top">
             <th scope="row">Phone</th>
             <td><input type="text" name="clubmember_phone" value="" /></td>
+        </tr>
+
+        <tr valign="top">
+            <th scope="row">Membership Date</th>
+            <td><input type="text" id="datepicker" name="clubmember_membership_date" /></td>
+        </tr>
+        <tr valign="top">
+            <th scope="row">Membership Duration</th>
+            <td>
+                <select name="clubmember_membership_duration">
+                    <option value="1" selected="">1 Month</option>
+                    <option value="2">2 Months</option>
+                    <option value="3">3 Months</option>
+                    <option value="4">4 Months</option>
+                    <option value="5">5 Months</option>
+                    <option value="6">6 Months</option>
+                    <option value="7">7 Months</option>
+                    <option value="8">8 Months</option>
+                    <option value="9">9 Months</option>
+                    <option value="10">10 Months</option>
+                    <option value="11">11 Months</option>
+                    <option value="12">1 year</option>
+                    <option value="24">2 years</option>
+                </select>
+            </td>
         </tr>
     </table>
     

@@ -9,15 +9,7 @@ function cm_add_single_member($member_data){
 
     $wpdb->insert(
         $table_name,
-        $member_data,
-        array(
-            "%s",
-            "%s",
-            "%s",
-            "%s",
-            "%s",
-            "%s"
-        )
+        $member_data
     );
 
     return $wpdb->insert_id;
@@ -32,17 +24,7 @@ function cm_update_single_member($member_id, $member_data){
 	$update_status= $wpdb->update(
             $table_name,
             $member_data,
-            array("id"=>$member_id),
-            array(
-                "%s",
-                "%s",
-                "%s",
-                "%s",
-                "%s",
-                "%s",
-                "%s"
-            ),
-            array("%d")
+            array("id"=>$member_id)
         );
 
 	return $update_status;
@@ -71,24 +53,6 @@ function cm_get_all_clubmembers(){
      	"
 		SELECT *
 		FROM $table_name
-     	"
-     );
-
-    return $clubmembers;
-}
-
-/**
-* Get all active members
-*/
-function cm_get_all_active_members(){
-	global $wpdb;
-     $table_name = $wpdb->prefix."clubmember_users";
-
-     $clubmembers = $wpdb->get_results(
-     	"
-		SELECT *
-		FROM $table_name
-		WHERE status='1'
      	"
      );
 

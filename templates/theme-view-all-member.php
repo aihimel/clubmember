@@ -1,6 +1,6 @@
 <div class="wrap">
 	<?php 
-	 $clubmembers = cm_get_all_active_members();
+	 $clubmembers = cm_get_all_clubmembers();
 	?>
 
 	<table class="clubmember-all">
@@ -11,8 +11,7 @@
 				<th>Department</th>
 				<th>Semester</th>
 				<th>Class Roll</th>
-				<!-- <th>Email</th> -->
-				<!-- <th class="manage-column" scope="col">Phone</th> -->
+				<th>Status</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -27,8 +26,18 @@
 				<td><?php echo $members->department ?></td>
 				<td><?php echo $members->semester ?></td>
 				<td><?php echo $members->class_roll ?></td>
-				<!-- <td><?php //echo $members->email ?></td> -->
-				<!-- <td><?php //echo $members->phone ?></td> -->
+				<td><?php 
+					$mem_date= new DateTime($members->membership_date);
+					$cur_date = new DateTime('now');
+					$mem_date->add(new DateInterval('P'.$members->membership_duration.'M'));
+					if($cur_date >  $mem_date){
+						echo "Expired";
+					}else{
+						
+						echo "Active Until ". $mem_date->format("d M Y"); 
+					}
+					?>
+				</td>
 			</tr>
 
 		<?php } ?>
