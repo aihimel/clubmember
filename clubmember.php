@@ -5,8 +5,8 @@ Plugin URI: http://alaminopu.me/plugins/
 Description: To manage different type of Clubs
 Author: Md. Al-Amin opu
 Author URI: http://alaminopu.me
-Version: 0.2
-License: GPL2
+Version: 0.3
+License: GPLv3 or later
 */
 
 if( !defined("ABSPATH") ) exit();
